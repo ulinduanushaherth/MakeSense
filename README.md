@@ -157,12 +157,12 @@ CONFIG = {
 ```
 
 Configuration details:
-- mode: adaptive, fixed, temporal
-- use_query_decomposed: query decomposed or single vector embedding
-- epsilon: threshold gain acheieved `patience` times to trigger stopping
-- patience: how many times of gains equivalent to `epsilon` must trigger stopping
-- k_max: upper bound for any set (triggered only if saturation is not observed at `k_max` set size)
-- temporal_slices: number of stages before uncovering all candidates
-- alpha_temporal: controls semantic drift
+- `mode`: adaptive, fixed, temporal
+- `use_query_decomposed`: query decomposed or single vector embedding
+- `epsilon`: threshold gain acheieved `patience` times to trigger stopping
+- `patience`: how many times of gains equivalent to `epsilon` must trigger stopping
+- `k_max`: upper bound for any set (triggered only if saturation is not observed at `k_max` set size)
+- `temporal_slices`: number of stages before uncovering all candidates
+- `alpha_temporal`: controls semantic drift
 
 
