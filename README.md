@@ -117,7 +117,7 @@ python -m spacy download en_core_web_sm
 
 ## Installation using uv
 
-Install uv package manager based on your OS (Windows/MacOS/Linux)
+Install uv package manager based on your OS (Windows/MacOS/Linux) - 
 https://docs.astral.sh/uv/getting-started/installation/
 
 ```bash
@@ -144,17 +144,25 @@ python -m eviot.runners.single_query
 
 ```bash
 CONFIG = {
-    "mode": "adaptive",          # fixed | adaptive | temporal
+    "mode": "adaptive",
     "use_query_decomposition": True,
 
     "epsilon": 0.01,
     "patience": 2,
-    "k_max": 12,
+    "k_max": 10,
 
     "temporal_slices": 3,
     "alpha_temporal": 0.3,
 }
 ```
 
+Configuration details:
+- mode: adaptive, fixed, temporal
+- use_query_decomposed: query decomposed or single vector embedding
+- epsilon: threshold gain acheieved `patience` times to trigger stopping
+- patience: how many times of gains equivalent to `epsilon` must trigger stopping
+- k_max: upper bound for any set (triggered only if saturation is not observed at `k_max` set size)
+- temporal_slices: number of stages before uncovering all candidates
+- alpha_temporal: controls semantic drift
 
 
