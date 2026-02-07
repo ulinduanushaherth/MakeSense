@@ -5,6 +5,7 @@ from ot_context.ot.cost import ot_cost
 from ot_context.encoders.encoder import Encoder
 
 # Config
+
 USE_QUERY_DECOMPOSITION = False
 
 

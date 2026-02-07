@@ -3,7 +3,6 @@ from ot_context.encoders.encoder import Encoder
 from ot_context.selection.adaptive import build_context_set_adaptive
 from ot_context.selection.temporal import build_temporal_context
 
-
 # Config
 CONFIG = {
     "mode": "adaptive",   # [fixed, adaptive, temporal]
@@ -70,9 +69,6 @@ def run_context_construction(query, candidate_texts):
             "cost_curve": cost_curve
         }
 
-    # -------------------------------
-    # ADAPTIVE OT
-    # -------------------------------
     if mode == "adaptive":
         selected, cost_curve = build_context_set_adaptive(
             query_embs=q_embs,
