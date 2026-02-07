@@ -5,13 +5,11 @@ Reference implementation: **`eviot`**
 
 ---
 
-## What is this?
+## What is MakeSense
 
-**MakeSense** is a research framework for **constructing evidence sets**, not just ranking sentences.
+**MakeSense** is a research framework for **constructing evidence sets**, not just by ranking sentences.
 
-Its Python implementation, **`eviot`**, uses **Optimal Transport (OT)** to select a *set* of sentences that are **jointly sufficient** to answer complex (multi-hop) queries.
-
-This repository is intended for **research and analysis**, not production retrieval.
+Its Python implementation, **`eviot`**, uses **Optimal Transport (OT)** to select a *set* of sentences that are **together sufficient** to answer complex queries.
 
 ---
 
@@ -27,20 +25,21 @@ MakeSense answers:
 
 This distinction matters for:
 - multi-hop questions
-- redundant evidence
+- presence of redundancy
 - reasoning across multiple facts
-- deciding **when to stop retrieving**
+- deciding **joint sufficiency**
 
 ---
 
-## Core idea
+## How to MakeSense
 
-1. Embed the query (optionally decomposed into semantic supports)
-2. Embed candidate sentences
+1. Embed using (bge-base-en-v1.5), the
+    - query (optionally decomposed into semantic supports)
+    - candidate sentences
 3. Use **Optimal Transport** to measure *coverage* between:
    - query representation
    - candidate evidence set
-4. Construct evidence **as a set**, not a ranking
+4. Construct evidence **as a set**, not a list as a result of just relevance ranking
 
 ---
 
@@ -65,10 +64,10 @@ Best for:
 - OT behaves closer to dense retrieval
 - Favors explicit answer sentences
 
-Best for:
-- HotpotQA-style datasets
-- gold sentence recall
-- dataset-aligned evaluation
+Works for:
+- real-world implementations
+- evidence recall
+- optimizing context retrieval to minimzing set size trade-off
 
 ---
 
@@ -76,7 +75,6 @@ Best for:
 
 ### Adaptive OT (default)
 - Greedy selection
-- OT-based stopping
 - Stops when marginal gain saturates
 - Produces minimal sufficient context
 
@@ -84,9 +82,8 @@ Best for:
 
 ### Fixed OT
 - Selects exactly `k` sentences
-- Useful for ablations
-- Inflates context with redundancy
-- Not recommended as final method
+- Inflates context beyond sufficiency for large `k`
+- Not recommended for practical purposes
 
 ---
 
@@ -107,7 +104,7 @@ Used for:
 
 ---
 
-## Installation
+## Installation using pip
 
 ```bash
 python -m venv .venv
@@ -115,8 +112,26 @@ source .venv/bin/activate
 
 pip install torch transformers pot spacy
 python -m spacy download en_core_web_sm
-
 ```
+---
+
+## Installation using uv
+
+Install uv package manager based on your OS (Windows/MacOS/Linux)
+https://docs.astral.sh/uv/getting-started/installation/
+
+```bash
+uv init
+uv venv
+uv sync
+```
+
+Or manually add dependencies
+
+```bash
+uv add torch pot spacy transformers
+```
+
 ---
 
 ## To run
@@ -140,4 +155,6 @@ CONFIG = {
     "alpha_temporal": 0.3,
 }
 ```
+
+
 
