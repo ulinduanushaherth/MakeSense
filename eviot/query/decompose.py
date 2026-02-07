@@ -1,6 +1,6 @@
 import spacy
 import torch
-from ot_context.encoders.encoder import Encoder
+from eviot.encoders.encoder import Encoder
 
 nlp = spacy.load("en_core_web_sm")
 encoder = Encoder()

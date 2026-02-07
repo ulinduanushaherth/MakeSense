@@ -1,11 +1,11 @@
-from ot_context.query.decompose import extract_phrases
-from ot_context.encoders.encoder import Encoder
-from ot_context.selection.adaptive import build_context_set_adaptive
-from ot_context.selection.temporal import build_temporal_context
+from eviot.query.decompose import extract_phrases
+from eviot.encoders.encoder import Encoder
+from eviot.selection.adaptive import build_context_set_adaptive
+from eviot.selection.temporal import build_temporal_context
 
 # Config
 CONFIG = {
-    "mode": "adaptive",   # [fixed, adaptive, temporal]
+    "mode": "temporal",   # [fixed, adaptive, temporal]
 
     "use_query_decomposition": False,
 
@@ -25,14 +25,18 @@ CONFIG = {
 
 # Input
 
-QUERY = "Does caffeine improve long-term memory retention in adults?"
+QUERY = "Did the discovery of insulin ultimately reduce mortality from diabetes, and who was responsible for its first successful clinical use?"
 
 CANDIDATE_TEXTS = [
-    "Caffeine is a central nervous system stimulant.",
-    "Memory consolidation depends on sleep quality.",
-    "Several studies examine caffeine and cognition.",
-    "High caffeine intake disrupts sleep.",
-    "Some experiments show attention gains but not long-term recall."
+    "Insulin was discovered in 1921 at the University of Toronto by Frederick Banting and Charles Best.",
+    "Before the discovery of insulin, diabetes was often fatal, especially for children diagnosed with type 1 diabetes.",
+    "The introduction of insulin therapy led to a dramatic reduction in mortality among patients with diabetes.",
+    "Frederick Banting shared the Nobel Prize in Physiology or Medicine in 1923 for the discovery of insulin.",
+    "The first successful clinical use of insulin was performed by Frederick Banting and his colleagues on a patient named Leonard Thompson.",
+    "Advances in blood glucose monitoring have improved diabetes management over time.",
+    "Diabetes mellitus is a chronic metabolic disorder characterized by high blood sugar levels.",
+    "Charles Best later became a prominent professor of physiology.",
+    "Insulin therapy requires careful dosage to avoid hypoglycemia."
 ]
 
 

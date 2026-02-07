@@ -1,8 +1,8 @@
 import torch
 
-from ot_context.query.decompose import extract_phrases
-from ot_context.ot.cost import ot_cost
-from ot_context.encoders.encoder import Encoder
+from eviot.query.decompose import extract_phrases
+from eviot.ot.cost import ot_cost
+from eviot.encoders.encoder import Encoder
 
 # Config
 

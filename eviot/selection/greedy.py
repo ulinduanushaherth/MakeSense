@@ -1,5 +1,5 @@
 import torch
-from ot_context.ot.cost import ot_cost
+from eviot.ot.cost import ot_cost
 
 
 def greedy_select(query_embs, current, remaining, dense_prune_k=20):
